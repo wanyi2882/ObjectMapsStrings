@@ -29,5 +29,11 @@ public class Student {
         return this.hometown;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
 
+    public void setHometown(String hometown) {
+        this.hometown = hometown;
+    }
 }
