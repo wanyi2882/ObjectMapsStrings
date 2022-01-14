@@ -40,32 +40,32 @@ public class Article {
         System.out.printf("%s - %s:%s", title, content, author);
     }
 
-//    public static void main(String[] args) {
-//        // write your code here
-//        Scanner sc = new Scanner(System.in);
-//
-//        String[] articles = sc.nextLine().split(", ");
-//        String title = articles[0];
-//        String content = articles[1];
-//        String author = articles[2];
-//        Article article = new Article(title, content, author);
-//
-//        int n = Integer.parseInt(sc.nextLine());
-//
-//        for(int i = 0; i < n; i++){
-//            String[] command = sc.nextLine().split(": ");
-//
-//            if(command[0].equals("Edit")){
-//                article.setContent(command[1]);
-//            }
-//            else if(command[0].equals("ChangeAuthor")){
-//                article.setAuthor(command[1]);
-//            }
-//            else if(command[0].equals("Rename")){
-//                article.setTitle(command[1]);
-//            }
-//        }
-//
-//        System.out.printf("%s - %s:%s", article.getTitle(), article.getContent(), article.getAuthor());
-//    }
+    public static void main(String[] args) {
+        // write your code here
+        Scanner sc = new Scanner(System.in);
+
+        String[] articles = sc.nextLine().split(", ");
+        String title = articles[0];
+        String content = articles[1];
+        String author = articles[2];
+        Article article = new Article(title, content, author);
+
+        int n = Integer.parseInt(sc.nextLine());
+
+        for(int i = 0; i < n; i++){
+            String[] command = sc.nextLine().split(": ");
+
+            if(command[0].equals("Edit")){
+                article.edit(command[1]);
+            }
+            else if(command[0].equals("ChangeAuthor")){
+                article.changeAuthor(command[1]);
+            }
+            else if(command[0].equals("Rename")){
+                article.rename(command[1]);
+            }
+        }
+
+        article.overrideToString(article.getTitle(), article.getContent(), article.getAuthor());
+    }
 }
