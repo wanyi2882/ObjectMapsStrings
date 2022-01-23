@@ -104,7 +104,7 @@ public class Heroes {
                 else if(commandArray[0].equals("TakeDamage")){
                     for(int i = 0; i < heroesList.size(); i++){
                         if(heroesList.get(i).getHero().equals(commandArray[1])){
-                            if(heroesList.get(i).getMp() > Integer.parseInt(commandArray[2])){
+                            if(heroesList.get(i).getHp() > Integer.parseInt(commandArray[2])){
                                 heroesList.get(i).setHp(heroesList.get(i).getHp() - Integer.parseInt(commandArray[2]));
                                 System.out.printf("%s was hit for %d HP by %s and now has %d HP left!%n",
                                         commandArray[1], Integer.parseInt(commandArray[2]),
